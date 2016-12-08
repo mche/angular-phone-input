@@ -12,7 +12,7 @@
 
 HTML:
 
-  <input class="input-phone" type='text' phone-input ng-model="phoneVal"/>
+  <input type="text" phone-input ng-model="phoneVal"/>
   ...
   <script src="<path to>/phone-input.js"></script>
 
