@@ -1,0 +1,23 @@
+=pod
+
+=encoding utf8
+
+Доброго всем
+
+¡ ¡ ¡ ALL GLORY TO GLORIA ! ! !
+
+=head1 Automatic phone number formatting in input field
+
+=head1 SINOPSYS
+
+HTML:
+
+  <input class="input-phone" type='text' phone-input ng-model="phoneVal"/>
+  ...
+  <script src="<path to>/phone-input.js"></script>
+
+JS:
+
+  angular.module('myApp', ['phone.input'])...
+
+=cut
