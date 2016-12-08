@@ -8,7 +8,7 @@
 
 =head1 Automatic phone number formatting in input field
 
-=head1 SINOPSYS
+=head1 SYNOPSIS
 
 HTML:
 
