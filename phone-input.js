@@ -70,11 +70,11 @@ app.filter('tel', function () {
         //~ console.log(tel);
         if (!tel) { return ''; }
 
-        var value = tel.toString().trim();//.replace(/^\+/, '');
+        var value = tel.toString().replace(re.non_digit, '').slice(0,10);//.replace(/^\+/, '');
 
-        if (value.match(re.non_digit)) {
-            return tel;
-        }
+        //~ if (value.match(re.non_digit)) {
+            //~ return tel;
+       //~ }
       
       //~ var nums = re.tel.exec(value);
       var nums = value.match(re.tel);
