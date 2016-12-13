@@ -33,8 +33,8 @@ app.directive('phoneInput', function($filter, $browser) {
         require: 'ngModel',
         link: function($scope, $element, $attrs, ngModelCtrl) {
             var listener = function() {
-                var value = $element.val().replace(re.non_digit, '');
-                $element.val($filter('tel')(value, false));
+                //~ var value = $element.val().replace(re.non_digit, '');
+                $element.val($filter('tel')($element.val(), false));
             };
 
             // This runs when we update the text field
@@ -67,7 +67,6 @@ app.directive('phoneInput', function($filter, $browser) {
 });
 app.filter('tel', function () {
     return function (tel) {
-        //~ console.log(tel);
         if (!tel) { return ''; }
 
         var value = tel.toString().replace(re.non_digit, '').slice(0,10);//.replace(/^\+/, '');
