@@ -33,8 +33,8 @@ app.directive('phoneInput', function($filter, $browser) {
         require: 'ngModel',
         link: function($scope, $element, $attrs, ngModelCtrl) {
             var listener = function() {
-                //~ var value = $element.val().replace(re.non_digit, '');
-                $element.val($filter('tel')($element.val(), false));
+                var value = $element.val().replace(re.non_digit, '');
+                $element.val($filter('tel')(value, false));
             };
 
             // This runs when we update the text field
