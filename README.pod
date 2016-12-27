@@ -27,13 +27,13 @@ JS:
 
 =head1 FILTERS
 
-=head1 tel
+=head2 tel
 
   <div>{{ '1234567890' | tel }}</div>
 
 Will produce string - (123) 456-78-90
 
-=head1 tel_star
+=head2 tel_star
 
   <div>{{ '1234567890' | tel_star }}</div>
 
