@@ -20,9 +20,9 @@ var app = angular.module('phone.input', []);
 
 var re = {
   tel: /(\d{1,3})(\d{1,3})?(\d{1,2})?(\d{1,2})?/,
-  tel_star: /((?:\d|\*){1,3})((?:\d|\*){1,3})?((?:\d|\*){1,2})?((?:\d|\*){1,2})?/,
+  tel_star: /([\d\*X]{1,3})([\d\*X]{1,3})?([\d\*X]{1,2})?([\d\*X]{1,2})?/,
   non_digit:  /[^0-9]/g,
-  non_digit_star:  /[^0-9\*]/g
+  non_digit_star:  /[^0-9\*X]/g
 };
 
 var format = function (nums) {// array
