@@ -26,10 +26,14 @@ var re = {
 };
 
 var format = function (nums) {// array
+  if (!nums) return nums;
   var fmt = "(" + nums[1];
-  if (nums[2]) fmt = fmt + ") " + nums[2];
-  if (nums[3]) fmt = fmt + "-"+ nums[3];
-  if (nums[4]) fmt = fmt + "-"+ nums[4];
+  if ( nums[1] && nums[1].length == 3 ) fmt += ") ";
+  if ( nums[2] ) fmt += nums[2];
+  if ( nums[2] && nums[2].length == 3 ) fmt += "-";
+  if ( nums[3] ) fmt += nums[3];
+  if ( nums[3] && nums[3].length == 2 ) fmt += "-";
+  if (nums[4]) fmt += nums[4];
   
   return fmt;
   
@@ -101,6 +105,19 @@ app.filter('tel_star', function () {
     //~ var nums = re.tel.exec(value);
     return format(value.match(re.tel_star));
   };
+});
+
+app.factory('phoneInput', function() {
+  var validate = function(tel) {
+    var ok = tel && tel.length >= 10 && ! re.non_digit.test(tel);
+    //~ console.log('validate: '+tel, ok);
+    if(ok) return true;
+    return false;
+  };
+  var factory = {
+    validate: validate,
+  };
+  return factory;
 });
 
 }());
